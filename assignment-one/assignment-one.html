@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Repository</title>
+</head>
+<body>
+	<a class="popup" href="javascript:void(0)" data-link="https://www.youtube.com/embed/zpQuBC7a3pE?autoplay=1" data-title="How to install SASS">SASS</a>
+
+	<a class="popup" href="#!" data-link="http://www.youtube.com/embed/Q0HFBy2BtfA?enablejsapi=1" data-title="How to install Node.js">Node.js</a>
+
+
+	<div id="video-view">
+		<a href="javascript:void(0);" class="close"></a>
+	</div>
+
+	<script type='text/javascript' src="js/jquery-1.12.0.min.js"></script>
+	<script type='text/javascript'>
+		$(document).ready(function(){
+			$('.popup').click(function(){
+				var $this = $(this);
+			    var $iframe = $("<iframe>").attr("src", $this.data("link")).css({"width": 400, "height": 300});
+			   	 var $title = $("<h1>").text($this.data("title"));
+			    $("#video-view").html($title).append($iframe);			    
+			});
+
+			$(document).on("click",function(){
+				$(this).fadeOut();
+			});
+		});
+	</script>
+</body>
+</html>
